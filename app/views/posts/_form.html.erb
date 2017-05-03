@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div id="title" class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :value => @post.title %>
   </div>
 
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :value => @post.description %>
   </div>
 
   <div class="actions">
