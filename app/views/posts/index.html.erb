@@ -1,3 +1,19 @@
 <% @posts.each do |post| %>
   <%= render partial: "post", locals: {post: post} %>
 <% end %>
+
+<script type="text/javascript">
+  $('document').ready(function() {
+    $('.js-more').on('click', function(event) {
+      console.log('clicked')
+      var id = $(this).data('id')
+      $.ajax({
+        url: '/posts/' + id + '/body',
+        success: function(data) {
+          console.log('requst successful the id is: ' + id )
+        $('#body-' + id).text(data)
+      }
+      })
+    })
+  })
+</script>

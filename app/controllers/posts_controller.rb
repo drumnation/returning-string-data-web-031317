@@ -5,6 +5,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def body
+    set_post
+    render plain: @post.description
+  end
+
   def show
   end
 
